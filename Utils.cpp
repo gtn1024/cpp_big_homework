@@ -27,3 +27,11 @@ std::string Utils::getUserHome() {
     return res;
 }
 
+std::string Utils::getPersonDataFilePath() {
+    return getUserHome() + "/gtn1024_person.dat";
+}
+
+std::string Utils::getVehicleDataFilePath() {
+    return getUserHome() + "/gtn1024_vehicle.dat";
+}
+

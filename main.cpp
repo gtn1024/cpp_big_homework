@@ -1,73 +1,31 @@
 #include <iostream>
+#include "MenuFunc.h"
 #include "Utils.h"
 #include "model/Truck.h"
 #include "model/Car.h"
 #include "model/Bus.h"
 #include "model/Person.h"
+#include "service/PersonService.h"
 
 using namespace std;
 
 void test();
 
-void showMenu();
-
 int main() {
     test();
     while (true) {
-        showMenu();
+        MenuFunc::showMenu();
     }
     return 0;
 }
 
-void showMenu() {
-    cout << endl;
-    cout << "   ================================================ " << endl;
-    cout << "||                       菜单                        " << endl;
-    cout << "   ================================================ " << endl;
-    cout << "||  1. 个人信息" << endl;
-    cout << "||  2. 车辆列表" << endl;
-    cout << "||  3. 车辆入库" << endl;
-    cout << "||  4. 车辆出库" << endl;
-    cout << "||  5. 车辆修改" << endl;
-    cout << "||  6. 车辆查询" << endl;
-    cout << "||  7. 车辆清空" << endl;
-    cout << "||  8. 数据存储" << endl;
-    cout << "||  9. 数据读取" << endl;
-    cout << "||  0. 退出系统" << endl;
-    cout << "   ================================================ " << endl;
-    cout << endl;
-    cout << "请输入操作序号：";
-    int op;
-    cin >> op;
-    switch (op) {
-        case 1:
-            break;
-        case 2:
-            break;
-        case 3:
-            break;
-        case 4:
-            break;
-        case 5:
-            break;
-        case 6:
-            break;
-        case 7:
-            break;
-        case 8:
-            break;
-        case 9:
-            break;
-        case 0:
-            exit(0);
-            break;
-    }
-}
 
 void test() {
     cout << "---------------- 工具类测试 ----------------" << endl;
     cout << Utils::getSystem() << endl;
     cout << Utils::getUserHome() << endl;
+    cout << Utils::getPersonDataFilePath() << endl;
+    cout << Utils::getVehicleDataFilePath() << endl;
 
     cout << "---------------- 卡车类测试 ----------------" << endl;
     Truck truck(1, 2, "getn的厂", 1990, 100);
@@ -110,4 +68,8 @@ void test() {
     person.setBirthday(d2);
     person.setId("123456789987654321");
     cout << person.toString() << endl;
+
+    auto personService = PersonService::getInstance();
+    personService.setPerson(person);
+    cout << personService.getPerson()->toString() << endl;
 }
