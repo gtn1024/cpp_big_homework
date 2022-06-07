@@ -6,12 +6,24 @@
 
 Person::Person(std::string name, Date &birthday, std::string id) : name(name), birthday(birthday), id(id) {}
 
+void Person::setName(std::string name) {
+    this->name = name;
+}
+
 std::string Person::getName() const {
     return name;
 }
 
+void Person::setBirthday(Date &date) {
+    this->birthday = date;
+}
+
 Date &Person::getBirthday() {
     return birthday;
+}
+
+void Person::setId(std::string id) {
+    this->id = id;
 }
 
 std::string Person::getId() const {

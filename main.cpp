@@ -12,7 +12,7 @@ void test();
 void showMenu();
 
 int main() {
-//    test();
+    test();
     while (true) {
         showMenu();
     }
@@ -20,6 +20,7 @@ int main() {
 }
 
 void showMenu() {
+    cout << endl;
     cout << "   ================================================ " << endl;
     cout << "||                       菜单                        " << endl;
     cout << "   ================================================ " << endl;
@@ -34,6 +35,7 @@ void showMenu() {
     cout << "||  9. 数据读取" << endl;
     cout << "||  0. 退出系统" << endl;
     cout << "   ================================================ " << endl;
+    cout << endl;
     cout << "请输入操作序号：";
     int op;
     cin >> op;
@@ -101,4 +103,11 @@ void test() {
     cout << person.getName() << ", "
          << person.getBirthday().toString() << ", "
          << person.getId() << endl;
+
+    cout << "---------------- 人类修改 ----------------" << endl;
+    person.setName("gtn1024");
+    Date d2(2000, 6, 16);
+    person.setBirthday(d2);
+    person.setId("123456789987654321");
+    cout << person.toString() << endl;
 }

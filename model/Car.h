@@ -17,6 +17,7 @@ private:
      * 座位数
      */
     int seats;
+
 public:
     const static int SMALL = 2;
     const static int MEDIUM = 5;
