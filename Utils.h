@@ -26,14 +26,7 @@ public:
      * 获取车主信息文件路径
      * @return 车主信息文件路径
      */
-    static std::string getPersonDataFilePath();
-
-    /**
-     * 获取车辆信息文件路径
-     * @return 车辆信息文件路径
-     */
-    static std::string getVehicleDataFilePath();
-
+    static std::string getFilePath();
 };
 
 

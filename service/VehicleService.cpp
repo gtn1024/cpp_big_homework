@@ -3,9 +3,6 @@
 //
 
 #include "VehicleService.h"
-#include "../model/Truck.h"
-#include "../model/Car.h"
-#include "../model/Bus.h"
 
 VehicleService::VehicleService() = default;
 

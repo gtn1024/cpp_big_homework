@@ -11,6 +11,8 @@
 #include "model/Bus.h"
 #include "model/Truck.h"
 #include "service/VehicleService.h"
+#include "service/FileService.h"
+#include "Utils.h"
 
 using namespace std;
 
@@ -206,10 +208,10 @@ bool MenuFunc::showVehicleListTips() {
 void MenuFunc::showOnlyExitMenuTips() {
     cout << "   ================================================ " << endl;
     cout << "||" << endl;
-    cout << "||      任意数字退出" << endl;
+    cout << "||      任意字符退出" << endl;
     cout << "||" << endl;
     cout << "   ================================================ " << endl;
-    int _;
+    string _;
     cin >> _;
 }
 
@@ -360,9 +362,36 @@ void MenuFunc::clearVehicle() {
 }
 
 void MenuFunc::saveData() {
-    // TODO: 保存数据
+    cout << endl;
+    cout << "   ================================================ " << endl;
+    cout << "||" << endl;
+    cout << "||                     保存数据                      " << endl;
+    cout << "||" << endl;
+    cout << "   ================================================ " << endl;
+    cout << "||" << endl;
+    if (FileService::saveToFile()) {
+        cout << "||  保存成功！" << endl;
+        cout << "||  文件名：" << Utils::getFilePath() << endl;
+    } else {
+        cout << "||  保存失败！" << endl;
+    }
+    cout << "||" << endl;
+    showOnlyExitMenuTips();
 }
 
 void MenuFunc::readData() {
-    // TODO: 读取数据
+    cout << endl;
+    cout << "   ================================================ " << endl;
+    cout << "||" << endl;
+    cout << "||                     读取数据                      " << endl;
+    cout << "||" << endl;
+    cout << "   ================================================ " << endl;
+    cout << "||" << endl;
+    if (FileService::loadFromFile()) {
+        cout << "||  读取成功！" << endl;
+    } else {
+        cout << "||  读取失败！" << endl;
+    }
+    cout << "||" << endl;
+    showOnlyExitMenuTips();
 }

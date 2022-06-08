@@ -26,8 +26,7 @@ void test() {
     cout << "---------------- 工具类测试 ----------------" << endl;
     cout << Utils::getSystem() << endl;
     cout << Utils::getUserHome() << endl;
-    cout << Utils::getPersonDataFilePath() << endl;
-    cout << Utils::getVehicleDataFilePath() << endl;
+    cout << Utils::getFilePath() << endl;
 
     cout << "---------------- 卡车类测试 ----------------" << endl;
     Truck truck(1, "123", "getn的厂", 1990, 100);
