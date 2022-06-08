@@ -37,8 +37,8 @@ bool VehicleService::updateVehicle(int id, Vehicle *vehicle) {
     return false;
 }
 
-std::vector<Vehicle *> *VehicleService::queryVehicle() {
-    return &list;
+std::vector<Vehicle *> &VehicleService::queryVehicle() {
+    return list;
 }
 
 Vehicle *VehicleService::queryVehicle(int id) {

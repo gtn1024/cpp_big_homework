@@ -24,7 +24,7 @@ public:
      */
     const int TYPE = 1;
 
-    Truck(int, int, std::string, int, int);
+    Truck(int, std::string, std::string, int, int);
 
     int getWeight() const;
 

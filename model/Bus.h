@@ -16,7 +16,7 @@ private:
     /**
      * 载客量
      */
-    int load;
+    int capacity;
 
 public:
     /**
@@ -24,9 +24,9 @@ public:
      */
     const int TYPE = 3;
 
-    Bus(int, int, std::string, int, int);
+    Bus(int, std::string, std::string, int, int);
 
-    int getLoad() const;
+    int getCapacity() const;
 
     std::string toString() const override;
 };

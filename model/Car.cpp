@@ -4,7 +4,7 @@
 
 #include "Car.h"
 
-Car::Car(int id, int licenseNumber, std::string manufacturer, int purchaseYear, int seats) :
+Car::Car(int id, std::string licenseNumber, std::string manufacturer, int purchaseYear, int seats) :
         Vehicle(id, licenseNumber, manufacturer, purchaseYear), seats(seats) {}
 
 int Car::getSeats() const {
@@ -15,7 +15,7 @@ std::string Car::toString() const {
     return "Car(" +
            std::to_string(TYPE) + ", " +
            std::to_string(id) + ", " +
-           std::to_string(licenseNumber) + ", " +
+           licenseNumber + ", " +
            manufacturer + ", " +
            std::to_string(purchaseYear) + ", " +
            std::to_string(seats) +

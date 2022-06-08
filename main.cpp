@@ -30,7 +30,7 @@ void test() {
     cout << Utils::getVehicleDataFilePath() << endl;
 
     cout << "---------------- 卡车类测试 ----------------" << endl;
-    Truck truck(1, 2, "getn的厂", 1990, 100);
+    Truck truck(1, "123", "getn的厂", 1990, 100);
     cout << truck.toString() << endl;
     cout << truck.getId() << ", "
          << truck.getLicenseNumber() << ", "
@@ -39,7 +39,7 @@ void test() {
          << truck.getWeight() << endl;
 
     cout << "---------------- 小轿车类测试 ----------------" << endl;
-    Car car(1, 2, "getaoning.com", 2002, Car::LARGE);
+    Car car(1, "234", "getaoning.com", 2002, Car::LARGE);
     cout << car.toString() << endl;
     cout << car.getId() << ", "
          << car.getLicenseNumber() << ", "
@@ -48,13 +48,13 @@ void test() {
          << car.getSeats() << endl;
 
     cout << "---------------- 大客车类测试 ----------------" << endl;
-    Bus bus(1, 2, "gtn1024", 2022, 30);
+    Bus bus(1, "345", "gtn1024", 2022, 30);
     cout << bus.toString() << endl;
     cout << bus.getId() << ", "
          << bus.getLicenseNumber() << ", "
          << bus.getManufacturer() << ", "
          << bus.getPurchaseYear() << ", "
-         << bus.getLoad() << endl;
+         << bus.getCapacity() << endl;
 
     cout << "---------------- 人类测试 ----------------" << endl;
     Date d(2004, 6, 16);

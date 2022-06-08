@@ -6,6 +6,11 @@
 #include "MenuFunc.h"
 #include "model/Date.h"
 #include "model/Person.h"
+#include "model/Vehicle.h"
+#include "model/Car.h"
+#include "model/Bus.h"
+#include "model/Truck.h"
+#include "service/VehicleService.h"
 
 using namespace std;
 
@@ -87,7 +92,7 @@ void MenuFunc::showPersonAndOperator() {
         cout << "||" << endl;
         cout << "   ================================================ " << endl;
         cout << "||" << endl;
-        cout << "|| 1. 修改信息         0. 退出菜单" << endl;
+        cout << "||      1. 修改信息         0. 退出菜单" << endl;
         cout << "||" << endl;
         cout << "   ================================================ " << endl;
         cout << endl;
@@ -124,15 +129,86 @@ void MenuFunc::modifyPerson() {
 }
 
 void MenuFunc::showVehicleList() {
-    // TODO: implement
+    auto ls = VehicleService::getInstance().queryVehicle();
+    cout << endl;
+    cout << "   ================================================ " << endl;
+    cout << "||                     车辆列表                      " << endl;
+    cout << "   ================================================ " << endl;
+    cout << "||" << endl;
+    if (ls.empty()) {
+        cout << "||                   暂无车辆信息                       " << endl;
+    } else {
+        for (auto &v: ls) {
+            cout << "||  " << v->toString() << endl;
+        }
+    }
+    cout << "||" << endl;
+    cout << "   ================================================ " << endl;
+    cout << "||" << endl;
+    cout << "||      0. 退出" << endl;
+    cout << "||" << endl;
+    cout << "   ================================================ " << endl;
+    cout << endl;
+    cout << "请输入操作序号：";
+    int op;
+    cin >> op;
+    switch (op) {
+        case 0:
+            // 退出菜单
+            return;
+    }
 }
 
 void MenuFunc::addVehicle() {
-    // TODO: implement
+    int type, id, purchaseYear;
+    string licenseNumber, manufacturer;
+    cout << endl;
+    cout << "   ================================================ " << endl;
+    cout << "||                     车辆入库                      " << endl;
+    cout << "   ================================================ " << endl;
+    cout << endl;
+    cout << "请选择车辆类型（1为卡车，2为小轿车，3为大客车）：";
+    cin >> type;
+    cout << "请输入车辆编号：";
+    cin >> id;
+    cout << "请输入车牌号：";
+    cin >> licenseNumber;
+    cout << "请输入车辆制造商：";
+    cin >> manufacturer;
+    cout << "请输入购买年份：";
+    cin >> purchaseYear;
+    Vehicle *v = nullptr;
+    switch (type) {
+        case 1:
+            // 卡车
+            int weight;
+            cout << "请输入车辆载重：";
+            cin >> weight;
+            v = new Truck(id, licenseNumber, manufacturer, purchaseYear, weight);
+            break;
+        case 2:
+            // 小轿车
+            int seats;
+            cout << "请输入车辆座位数：";
+            cin >> seats;
+            v = new Car(id, licenseNumber, manufacturer, purchaseYear, seats);
+            break;
+        case 3:
+            // 大客车
+            int capacity;
+            cout << "请输入车辆载客量：";
+            cin >> capacity;
+            v = new Bus(id, licenseNumber, manufacturer, purchaseYear, capacity);
+            break;
+        default:
+            cout << "输入错误！" << endl;
+            return;
+    }
+    VehicleService::getInstance().addVehicle(v);
 }
 
 void MenuFunc::removeVehicle() {
-    // TODO: implement
+
 }
 
 void MenuFunc::modifyVehicle() {

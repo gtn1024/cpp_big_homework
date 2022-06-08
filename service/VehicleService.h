@@ -9,10 +9,11 @@
 #include <list>
 #include "../model/Vehicle.h"
 
-std::vector<Vehicle *> list;
 
 class VehicleService {
 private:
+    std::vector<Vehicle *> list;
+
     VehicleService();
 
 public:
@@ -24,7 +25,7 @@ public:
 
     bool updateVehicle(int, Vehicle *);
 
-    std::vector<Vehicle *> *queryVehicle();
+    std::vector<Vehicle *> &queryVehicle();
 
     Vehicle *queryVehicle(int);
 };

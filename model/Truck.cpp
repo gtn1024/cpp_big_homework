@@ -4,7 +4,7 @@
 
 #include "Truck.h"
 
-Truck::Truck(int id, int licenseNumber, std::string manufacturer, int purchaseYear, int weight) :
+Truck::Truck(int id, std::string licenseNumber, std::string manufacturer, int purchaseYear, int weight) :
         Vehicle(id, licenseNumber, manufacturer, purchaseYear), weight(weight) {}
 
 int Truck::getWeight() const {
@@ -15,7 +15,7 @@ std::string Truck::toString() const {
     return "Truck(" +
            std::to_string(TYPE) + ", " +
            std::to_string(id) + ", " +
-           std::to_string(licenseNumber) + ", " +
+           licenseNumber + ", " +
            manufacturer + ", " +
            std::to_string(purchaseYear) + ", " +
            std::to_string(weight) +

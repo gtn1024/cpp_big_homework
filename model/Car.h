@@ -28,7 +28,7 @@ public:
     const static int MEDIUM = 5;
     const static int LARGE = 7;
 
-    Car(int, int, std::string, int, int);
+    Car(int, std::string, std::string, int, int);
 
     int getSeats() const;
 

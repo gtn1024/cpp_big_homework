@@ -4,14 +4,14 @@
 
 #include "Vehicle.h"
 
-Vehicle::Vehicle(int id, int licenseNumber, std::string manufacturer, int purchaseYear) :
+Vehicle::Vehicle(int id, std::string licenseNumber, std::string manufacturer, int purchaseYear) :
         id(id), licenseNumber(licenseNumber), manufacturer(manufacturer), purchaseYear(purchaseYear) {}
 
 int Vehicle::getId() const {
     return id;
 }
 
-int Vehicle::getLicenseNumber() const {
+std::string Vehicle::getLicenseNumber() const {
     return licenseNumber;
 }
 

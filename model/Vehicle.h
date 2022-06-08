@@ -20,7 +20,7 @@ protected:
     /**
      * 车牌号
      */
-    int licenseNumber;
+    std::string licenseNumber;
 
     /**
      * 制造商名称
@@ -33,11 +33,11 @@ protected:
     int purchaseYear;
 
 public:
-    Vehicle(int, int, std::string, int);
+    Vehicle(int, std::string, std::string, int);
 
     int getId() const;
 
-    int getLicenseNumber() const;
+    std::string getLicenseNumber() const;
 
     std::string getManufacturer() const;
 
