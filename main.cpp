@@ -5,14 +5,16 @@
 #include "model/Car.h"
 #include "model/Bus.h"
 #include "model/Person.h"
-#include "service/PersonService.h"
 
 using namespace std;
+
+Date d(2022, 6, 16);
+Person person("default", d, "123456789");
 
 void test();
 
 int main() {
-    test();
+//    test();
     while (true) {
         MenuFunc::showMenu();
     }
@@ -69,7 +71,4 @@ void test() {
     person.setId("123456789987654321");
     cout << person.toString() << endl;
 
-    auto personService = PersonService::getInstance();
-    personService.setPerson(person);
-    cout << personService.getPerson()->toString() << endl;
 }

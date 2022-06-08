@@ -12,7 +12,13 @@ int Truck::getWeight() const {
 }
 
 std::string Truck::toString() const {
-    return "Truck(" + std::to_string(id) + ", " + std::to_string(licenseNumber) + ", " + manufacturer +
-           ", " + std::to_string(purchaseYear) + ", " + std::to_string(weight) + ")";
+    return "Truck(" +
+           std::to_string(TYPE) + ", " +
+           std::to_string(id) + ", " +
+           std::to_string(licenseNumber) + ", " +
+           manufacturer + ", " +
+           std::to_string(purchaseYear) + ", " +
+           std::to_string(weight) +
+           ")";
 }
 

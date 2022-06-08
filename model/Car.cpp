@@ -12,7 +12,13 @@ int Car::getSeats() const {
 }
 
 std::string Car::toString() const {
-    return "Car(" + std::to_string(id) + ", " + std::to_string(licenseNumber) + ", " + manufacturer +
-           ", " + std::to_string(purchaseYear) + ", " + std::to_string(seats) + ")";
+    return "Car(" +
+           std::to_string(TYPE) + ", " +
+           std::to_string(id) + ", " +
+           std::to_string(licenseNumber) + ", " +
+           manufacturer + ", " +
+           std::to_string(purchaseYear) + ", " +
+           std::to_string(seats) +
+           ")";
 }
 

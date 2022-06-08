@@ -12,7 +12,13 @@ int Bus::getLoad() const {
 }
 
 std::string Bus::toString() const {
-    return "Bus(" + std::to_string(id) + ", " + std::to_string(licenseNumber) + ", " + manufacturer +
-           ", " + std::to_string(purchaseYear) + ", " + std::to_string(load) + ")";
+    return "Bus(" +
+           std::to_string(TYPE) + ", " +
+           std::to_string(id) + ", " +
+           std::to_string(licenseNumber) + ", " +
+           manufacturer + ", " +
+           std::to_string(purchaseYear) + ", " +
+           std::to_string(load) +
+           ")";
 }
 

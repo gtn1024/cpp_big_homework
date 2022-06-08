@@ -9,14 +9,24 @@
 #include <list>
 #include "../model/Vehicle.h"
 
+std::vector<Vehicle *> list;
+
 class VehicleService {
 private:
     VehicleService();
 
-    std::vector<Vehicle *> list;
-
 public:
     static VehicleService &getInstance();
+
+    void addVehicle(Vehicle *);
+
+    bool removeVehicle(int);
+
+    bool updateVehicle(int, Vehicle *);
+
+    std::vector<Vehicle *> *queryVehicle();
+
+    Vehicle *queryVehicle(int);
 };
 
 

@@ -19,6 +19,11 @@ private:
     int load;
 
 public:
+    /**
+     * 类型：大客车
+     */
+    const int TYPE = 3;
+
     Bus(int, int, std::string, int, int);
 
     int getLoad() const;

@@ -20,6 +20,10 @@ int Date::getDay() const {
 }
 
 std::string Date::toString() const {
-    return "Date(" + std::to_string(year) + ", " + std::to_string(month) + ", " + std::to_string(day) + ")";
+    return "Date(" +
+           std::to_string(year) + ", " +
+           std::to_string(month) + ", " +
+           std::to_string(day) +
+           ")";
 }
 

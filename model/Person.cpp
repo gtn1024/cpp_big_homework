@@ -31,5 +31,9 @@ std::string Person::getId() const {
 }
 
 std::string Person::toString() const {
-    return "Person(" + name + ", " + birthday.toString() + ", " + id + ")";
+    return "Person(" +
+           name + ", " +
+           birthday.toString() + ", " +
+           id +
+           ")";
 }

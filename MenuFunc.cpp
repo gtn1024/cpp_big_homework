@@ -4,8 +4,12 @@
 
 #include <iostream>
 #include "MenuFunc.h"
+#include "model/Date.h"
+#include "model/Person.h"
 
 using namespace std;
+
+extern Person person;
 
 void MenuFunc::showMenu() {
     cout << endl;
@@ -71,13 +75,52 @@ void MenuFunc::showMenu() {
 }
 
 void MenuFunc::showPersonAndOperator() {
-    cout << endl;
-    cout << "   ================================================ " << endl;
-    cout << "||                     个人信息                      " << endl;
-    cout << "   ================================================ " << endl;
-    cout << "||  1. 显示个人信息" << endl;
-    cout << "||  2. 修改个人信息" << endl;
+    while (true) {
+        cout << endl;
+        cout << "   ================================================ " << endl;
+        cout << "||                     个人信息                      " << endl;
+        cout << "   ================================================ " << endl;
+        cout << "||" << endl;
+        cout << "||  姓名：" << person.getName() << endl;
+        cout << "||  出生日期：" << person.getBirthday().toString() << endl;
+        cout << "||  身份证号：" << person.getId() << endl;
+        cout << "||" << endl;
+        cout << "   ================================================ " << endl;
+        cout << "||" << endl;
+        cout << "|| 1. 修改信息         0. 退出菜单" << endl;
+        cout << "||" << endl;
+        cout << "   ================================================ " << endl;
+        cout << endl;
+        cout << "请输入操作序号：";
+        int op;
+        cin >> op;
+        switch (op) {
+            case 1:
+                // 修改信息
+                modifyPerson();
+                break;
+            case 0:
+                // 退出菜单
+                return;
+        }
+    }
+}
 
+void MenuFunc::modifyPerson() {
+    string name, id;
+    int y, m, d;
+    cout << endl;
+    cout << "请输入姓名：";
+    cin >> name;
+    cout << "请输入出生日期（以空格分割）：";
+    cin >> y >> m >> d;
+    Date birthday(y, m, d);
+    cout << "请输入身份证号：";
+    cin >> id;
+    person.setName(name);
+    person.setBirthday(birthday);
+    person.setId(id);
+    cout << "修改成功！" << endl;
 }
 
 void MenuFunc::showVehicleList() {

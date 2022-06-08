@@ -19,6 +19,11 @@ private:
     int weight;
 
 public:
+    /**
+     * 类型：卡车
+     */
+    const int TYPE = 1;
+
     Truck(int, int, std::string, int, int);
 
     int getWeight() const;

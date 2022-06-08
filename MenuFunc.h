@@ -19,6 +19,11 @@ public:
     static void showPersonAndOperator();
 
     /**
+     * 添加车主
+     */
+    static void modifyPerson();
+
+    /**
      * 车辆列表
      */
     static void showVehicleList();

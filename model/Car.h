@@ -19,6 +19,11 @@ private:
     int seats;
 
 public:
+    /**
+     * 类型：小轿车
+     */
+    const int TYPE = 2;
+
     const static int SMALL = 2;
     const static int MEDIUM = 5;
     const static int LARGE = 7;
