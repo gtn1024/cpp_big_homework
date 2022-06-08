@@ -32,6 +32,6 @@ std::string Utils::getPersonDataFilePath() {
 }
 
 std::string Utils::getVehicleDataFilePath() {
-    return getUserHome() + "/gtn1024_vehicle.dat";
+    return getUserHome() + "/gtn1024_vehicle.csv";
 }
 

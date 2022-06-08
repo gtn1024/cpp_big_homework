@@ -44,6 +44,10 @@ public:
     int getPurchaseYear() const;
 
     virtual std::string toString() const = 0;
+
+    static int getVehicleType(Vehicle *);
+
+    static std::string getVehicleTypeName(Vehicle *);
 };
 
 #endif //CPP_BIG_HOMEWORK_VEHICLE_H

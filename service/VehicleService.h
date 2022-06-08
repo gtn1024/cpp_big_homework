@@ -23,6 +23,8 @@ public:
 
     bool removeVehicle(int);
 
+    void clearVehicles();
+
     bool updateVehicle(int, Vehicle *);
 
     std::vector<Vehicle *> &queryVehicle();

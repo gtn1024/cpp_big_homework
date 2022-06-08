@@ -22,7 +22,7 @@ public:
     /**
      * 类型：大客车
      */
-    const int TYPE = 3;
+    static const int TYPE = 3;
 
     Bus(int, std::string, std::string, int, int);
 

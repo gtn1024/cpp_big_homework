@@ -21,4 +21,3 @@ std::string Truck::toString() const {
            std::to_string(weight) +
            ")";
 }
-

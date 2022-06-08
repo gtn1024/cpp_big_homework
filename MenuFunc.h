@@ -5,8 +5,16 @@
 #ifndef CPP_BIG_HOMEWORK_MENUFUNC_H
 #define CPP_BIG_HOMEWORK_MENUFUNC_H
 
+#include "model/Vehicle.h"
 
 class MenuFunc {
+private:
+    static Vehicle *newVehicleTips();
+
+    static bool showVehicleListTips();
+
+    static void showOnlyExitMenuTips();
+
 public:
     /**
      * 显示总列表

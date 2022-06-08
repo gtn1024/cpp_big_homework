@@ -22,7 +22,7 @@ public:
     /**
      * 类型：卡车
      */
-    const int TYPE = 1;
+    static const int TYPE = 1;
 
     Truck(int, std::string, std::string, int, int);
 
