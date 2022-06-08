@@ -316,7 +316,19 @@ void MenuFunc::queryVehicle() {
                 }
                 case Car::TYPE: {
                     auto *c = dynamic_cast<Car *>(v);
-                    cout << "座位数：" << c->getSeats() << endl;
+                    string s;
+                    switch (c->getSeats()) {
+                        case Car::SMALL:
+                            s = " (小型车)";
+                            break;
+                        case Car::MEDIUM:
+                            s = " (中型车)";
+                            break;
+                        case Car::LARGE:
+                            s = " (大型车)";
+                            break;
+                    }
+                    cout << "座位数：" << c->getSeats() << s << endl;
                     break;
                 }
                 case Bus::TYPE: {

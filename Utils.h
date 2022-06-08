@@ -23,8 +23,8 @@ public:
     static std::string getUserHome();
 
     /**
-     * 获取车主信息文件路径
-     * @return 车主信息文件路径
+     * 获取文件路径
+     * @return 文件路径
      */
     static std::string getFilePath();
 };
