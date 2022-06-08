@@ -6,6 +6,7 @@
 #include "Truck.h"
 #include "Car.h"
 #include "Bus.h"
+#include <typeinfo> // 在 Windows 下需要添加
 
 Vehicle::Vehicle(int id, std::string licenseNumber, std::string manufacturer, int purchaseYear) :
         id(id), licenseNumber(licenseNumber), manufacturer(manufacturer), purchaseYear(purchaseYear) {}
