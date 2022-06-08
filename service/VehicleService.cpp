@@ -3,10 +3,11 @@
 //
 
 #include "VehicleService.h"
+#include "../model/Truck.h"
+#include "../model/Car.h"
+#include "../model/Bus.h"
 
-VehicleService::VehicleService() {
-
-}
+VehicleService::VehicleService() = default;
 
 VehicleService &VehicleService::getInstance() {
     static VehicleService instance;
@@ -21,18 +22,15 @@ bool VehicleService::removeVehicle(int id) {
     if (id < 0 || id >= list.size()) {
         return false;
     }
-    auto it = list.begin() + id;
-    // TODO: 根据对象类型销毁资源
-    // delete *it;
-    list.erase(it);
+    Vehicle::deleteObject(list[id]);
+    list.erase(list.begin() + id);
     return true;
 }
 
 void VehicleService::clearVehicles() {
-    // TODO: 销毁资源
-//    for (auto &v: list) {
-//        delete v;
-//    }
+    for (auto &v: list) {
+        Vehicle::deleteObject(v);
+    }
     list.clear();
 }
 
@@ -40,11 +38,8 @@ bool VehicleService::updateVehicle(int id, Vehicle *vehicle) {
     if (id < 0 || id >= list.size()) {
         return false;
     }
-    auto it = list.begin() + id;
-    auto before = *it;
-    // TODO: 根据对象类型销毁资源
-    // delete before;
-    *it = vehicle;
+    Vehicle::deleteObject(list[id]);
+    list[id] = vehicle;
     return true;
 }
 

@@ -48,6 +48,8 @@ public:
     static int getVehicleType(Vehicle *);
 
     static std::string getVehicleTypeName(Vehicle *);
+
+    static void deleteObject(Vehicle *);
 };
 
 #endif //CPP_BIG_HOMEWORK_VEHICLE_H

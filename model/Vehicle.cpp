@@ -56,5 +56,28 @@ std::string Vehicle::getVehicleTypeName(Vehicle *v) {
     return typeName;
 }
 
+void Vehicle::deleteObject(Vehicle *v) {
+    auto type = Vehicle::getVehicleType(v);
+    switch (type) {
+        case Truck::TYPE: {
+            auto *t = dynamic_cast<Truck *>(v);
+            delete t;
+            break;
+        }
+        case Car::TYPE: {
+            auto *c = dynamic_cast<Car *>(v);
+            delete c;
+            break;
+        }
+        case Bus::TYPE: {
+            auto *b = dynamic_cast<Bus *>(v);
+            delete b;
+            break;
+        }
+        default:
+            break;
+    }
+}
+
 
 

@@ -360,9 +360,9 @@ void MenuFunc::clearVehicle() {
 }
 
 void MenuFunc::saveData() {
-    // TODO: implement
+    // TODO: 保存数据
 }
 
 void MenuFunc::readData() {
-    // TODO: implement
+    // TODO: 读取数据
 }
