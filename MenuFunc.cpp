@@ -79,7 +79,7 @@ void MenuFunc::showMenu() {
 //            break;
         default:
             // 退出系统
-            exit(0);
+            Utils::exitProg();
     }
 }
 

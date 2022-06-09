@@ -4,6 +4,7 @@
 
 #include "Utils.h"
 #include <string>
+#include "service/FileService.h"
 
 int Utils::getSystem() {
     int res = 0;
@@ -22,13 +23,18 @@ std::string Utils::getUserHome() {
     if (getSystem()) {
         res = std::getenv("HOME");
     } else {
-        res = std::getenv("HOMEPATH");
+        res = std::getenv("USERPROFILE");
     }
     return res;
 }
 
 std::string Utils::getFilePath() {
-    return getUserHome() + "/gtn1024_vehicle_manager.dat";
+    return getUserHome() + (getSystem() ? '/' : '\\') + "gtn1024_vehicle_manager.dat";
+}
+
+void Utils::exitProg() {
+    FileService::saveToFile();
+    exit(0);
 }
 
 

@@ -6,6 +6,7 @@
 #include "model/Bus.h"
 #include "model/Person.h"
 #include "unit_test/VehicleServiceTest.h"
+#include "service/FileService.h"
 
 using namespace std;
 
@@ -15,13 +16,14 @@ Person person("default", d, "123456789");
 void runUnitTest();
 
 int main() {
-    runUnitTest();
+//    runUnitTest();
+
+    FileService::loadFromFile();
     while (true) {
         MenuFunc::showMenu();
     }
     return 0;
 }
-
 
 void runUnitTest() {
     cout << "---------------- 工具类测试 ----------------" << endl;

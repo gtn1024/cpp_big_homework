@@ -27,6 +27,11 @@ public:
      * @return 文件路径
      */
     static std::string getFilePath();
+
+    /**
+     * 退出程序
+     */
+    static void exitProg();
 };
 
 

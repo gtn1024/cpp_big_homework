@@ -78,6 +78,8 @@ bool FileService::saveToFile() {
 }
 
 bool FileService::loadFromFile() {
+    VehicleService::getInstance().clearVehicles();
+
     std::string filePath = Utils::getFilePath();
     std::ifstream fin(filePath.c_str(), std::ios::binary);
     if (!fin) {
