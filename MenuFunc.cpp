@@ -37,9 +37,13 @@ void MenuFunc::showMenu() {
     cout << "||  0. 保存退出" << endl;
     cout << "   ================================================ " << endl;
     cout << endl;
-    cout << "请输入操作序号：";
     int op;
-    cin >> op;
+    do {
+        cout << "请输入操作序号：";
+        cin >> op;
+        cin.clear();  //cin.clear()作用是清除cin的错误状态
+        cin.ignore(); //cin.ignore()作用是忽略掉缓冲区的内容，直到遇到EOF为止
+    } while (cin.fail());
     switch (op) {
         case 1:
             // 个人信息
@@ -102,9 +106,13 @@ void MenuFunc::showPersonAndOperator() {
         cout << "||" << endl;
         cout << "   ================================================ " << endl;
         cout << endl;
-        cout << "请输入操作序号：";
         int op;
-        cin >> op;
+        do {
+            cout << "请输入操作序号：";
+            cin >> op;
+            cin.clear();
+            cin.ignore();
+        } while (cin.fail());
         switch (op) {
             case 1:
                 // 修改信息
