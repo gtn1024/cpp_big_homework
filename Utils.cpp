@@ -4,6 +4,7 @@
 
 #include "Utils.h"
 #include <string>
+#include <iostream>
 #include "service/FileService.h"
 
 int Utils::getSystem() {
@@ -33,7 +34,13 @@ std::string Utils::getFilePath() {
 }
 
 void Utils::exitProg() {
-    FileService::saveToFile();
+    if (FileService::saveToFile()) {
+        std::cout << "保存成功！" << std::endl;
+        std::cout << "文件名：" << getFilePath() << std::endl;
+    } else {
+        std::cout << "保存失败！" << std::endl;
+    }
+    std::cout << "正在退出……" << std::endl;
     exit(0);
 }
 
