@@ -30,6 +30,8 @@ public:
     std::vector<Vehicle *> &queryVehicle();
 
     Vehicle *queryVehicle(int);
+
+    int getVehicleCount() const;
 };
 
 

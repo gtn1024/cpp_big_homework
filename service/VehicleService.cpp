@@ -56,3 +56,7 @@ Vehicle *VehicleService::queryVehicle(int id) {
     }
     return list[id];
 }
+
+int VehicleService::getVehicleCount() const {
+    return list.size();
+}

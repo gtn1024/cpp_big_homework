@@ -276,11 +276,20 @@ void MenuFunc::modifyVehicle() {
         cout << "请输入车辆序号：";
         int id;
         cin >> id;
-        Vehicle *v = newVehicleTips();
-        if (v == nullptr) {
-            cout << "输入错误！" << endl;
+        int cnt = VehicleService::getInstance().getVehicleCount();
+        if (0 <= id && id < cnt) {
+            Vehicle *v = newVehicleTips();
+            if (v == nullptr) {
+                cout << "输入错误！" << endl;
+            } else {
+                if (VehicleService::getInstance().updateVehicle(id, v)) {
+                    cout << "修改成功！" << endl;
+                } else {
+                    cout << "修改失败！可能车辆序号不存在！" << endl;
+                }
+            }
         } else {
-            VehicleService::getInstance().updateVehicle(id, v);
+            cout << "输入错误！" << endl;
         }
     }
 }
