@@ -32,9 +32,9 @@ void MenuFunc::showMenu() {
     cout << "||  5. 车辆修改" << endl;
     cout << "||  6. 车辆查询" << endl;
     cout << "||  7. 车辆清空" << endl;
-    cout << "||  8. 数据存储" << endl;
-    cout << "||  9. 数据读取" << endl;
-    cout << "||  0. 退出系统" << endl;
+//    cout << "||  8. 数据存储" << endl;
+//    cout << "||  9. 数据读取" << endl;
+    cout << "||  0. 保存退出" << endl;
     cout << "   ================================================ " << endl;
     cout << endl;
     cout << "请输入操作序号：";
@@ -69,14 +69,14 @@ void MenuFunc::showMenu() {
             // 车辆清空
             clearVehicle();
             break;
-        case 8:
-            // 数据存储
-            saveData();
-            break;
-        case 9:
-            // 数据读取
-            readData();
-            break;
+//        case 8:
+//            // 数据存储
+//            saveData();
+//            break;
+//        case 9:
+//            // 数据读取
+//            readData();
+//            break;
         default:
             // 退出系统
             exit(0);
@@ -227,7 +227,11 @@ void MenuFunc::addVehicle() {
     if (v == nullptr) {
         cout << "输入错误！" << endl;
     } else {
-        VehicleService::getInstance().addVehicle(v);
+        if (VehicleService::getInstance().addVehicle(v)) {
+            cout << "入库成功！" << endl;
+        } else {
+            cout << "编号重复，入库失败！" << endl;
+        }
     }
     showOnlyExitMenuTips();
 }

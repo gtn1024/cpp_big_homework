@@ -19,7 +19,7 @@ private:
 public:
     static VehicleService &getInstance();
 
-    void addVehicle(Vehicle *);
+    bool addVehicle(Vehicle *);
 
     bool removeVehicle(int);
 

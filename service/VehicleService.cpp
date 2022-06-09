@@ -11,8 +11,14 @@ VehicleService &VehicleService::getInstance() {
     return instance;
 }
 
-void VehicleService::addVehicle(Vehicle *vehicle) {
+bool VehicleService::addVehicle(Vehicle *vehicle) {
+    for (auto &v: list) {
+        if (v->getId() == vehicle->getId()) {
+            return false;
+        }
+    }
     list.push_back(vehicle);
+    return true;
 }
 
 bool VehicleService::removeVehicle(int id) {

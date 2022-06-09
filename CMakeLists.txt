@@ -14,4 +14,4 @@ add_executable(cpp_big_homework
         model/Date.cpp model/Date.h
         service/VehicleService.cpp service/VehicleService.h
         MenuFunc.cpp MenuFunc.h
-        service/FileService.cpp service/FileService.h)
+        service/FileService.cpp service/FileService.h unit_test/VehicleServiceTest.cpp unit_test/VehicleServiceTest.h)
