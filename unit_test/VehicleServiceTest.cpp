@@ -5,7 +5,6 @@
 #include <iostream>
 #include "VehicleServiceTest.h"
 #include "../service/VehicleService.h"
-#include "../model/Vehicle.h"
 #include "../model/Truck.h"
 #include "../model/Car.h"
 #include "../model/Bus.h"

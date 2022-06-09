@@ -1,9 +1,6 @@
 #include <iostream>
 #include "MenuFunc.h"
 #include "Utils.h"
-#include "model/Truck.h"
-#include "model/Car.h"
-#include "model/Bus.h"
 #include "model/Person.h"
 #include "unit_test/VehicleServiceTest.h"
 #include "service/FileService.h"
