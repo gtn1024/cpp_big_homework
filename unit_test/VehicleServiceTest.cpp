@@ -2,6 +2,7 @@
 // Created by Taoning Ge on 2022/6/9.
 //
 
+#include <iostream>
 #include "VehicleServiceTest.h"
 #include "../service/VehicleService.h"
 #include "../model/Vehicle.h"
@@ -12,6 +13,7 @@
 auto vs = VehicleService::getInstance();
 
 bool testAddTruck() {
+    std::cout << "测试添加卡车" << std::endl;
     vs.clearVehicles();
     auto v = new Truck(1, "test", "test", 1, 1);
     vs.addVehicle(v);
@@ -19,6 +21,7 @@ bool testAddTruck() {
 }
 
 bool testAddCar() {
+    std::cout << "测试添加小轿车" << std::endl;
     vs.clearVehicles();
     auto v = new Car(1, "test", "test", 1, 1);
     vs.addVehicle(v);
@@ -26,6 +29,7 @@ bool testAddCar() {
 }
 
 bool testAddBus() {
+    std::cout << "测试添加大客车" << std::endl;
     vs.clearVehicles();
     auto v = new Bus(1, "test", "test", 1, 1);
     vs.addVehicle(v);
@@ -33,6 +37,7 @@ bool testAddBus() {
 }
 
 bool testRemoveVehicle() {
+    std::cout << "测试删除车辆" << std::endl;
     vs.clearVehicles();
     auto v = new Bus(1, "test", "test", 1, 1);
     vs.addVehicle(v);
@@ -41,6 +46,7 @@ bool testRemoveVehicle() {
 }
 
 bool testClearVehicles() {
+    std::cout << "测试清空车辆" << std::endl;
     vs.clearVehicles();
     auto v = new Bus(1, "test", "test", 1, 1);
     auto v2 = new Bus(2, "test", "test", 1, 1);
@@ -51,6 +57,7 @@ bool testClearVehicles() {
 }
 
 bool testUpdateVehicle() {
+    std::cout << "测试更新车辆" << std::endl;
     vs.clearVehicles();
     auto v = new Bus(1, "test", "test", 1, 1);
     vs.addVehicle(v);
@@ -60,6 +67,7 @@ bool testUpdateVehicle() {
 }
 
 bool testQueryVehicleInt() {
+    std::cout << "测试获取车辆" << std::endl;
     vs.clearVehicles();
     auto v = new Bus(1, "test", "test", 1, 1);
     vs.addVehicle(v);

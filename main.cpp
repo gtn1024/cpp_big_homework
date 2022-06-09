@@ -16,7 +16,7 @@ Person person("default", d, "123456789");
 void runUnitTest();
 
 int main() {
-//    runUnitTest();
+    runUnitTest();
 
     FileService::loadFromFile();
     while (true) {
