@@ -31,7 +31,7 @@ public:
     /**
      * 退出程序
      */
-    static void exitProg();
+    static void exitProgram();
 };
 
 

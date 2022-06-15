@@ -83,7 +83,7 @@ void MenuFunc::showMenu() {
 //            break;
         default:
             // 退出系统
-            Utils::exitProg();
+            Utils::exitProgram();
     }
 }
 
@@ -117,6 +117,7 @@ void MenuFunc::showPersonAndOperator() {
             case 1:
                 // 修改信息
                 modifyPerson();
+                cout << "修改成功！" << endl;
                 break;
             case 0:
                 // 退出菜单
@@ -139,7 +140,6 @@ void MenuFunc::modifyPerson() {
     person.setName(name);
     person.setBirthday(birthday);
     person.setId(id);
-    cout << "修改成功！" << endl;
 }
 
 void MenuFunc::showVehicleList() {
@@ -366,6 +366,13 @@ void MenuFunc::queryVehicle() {
 }
 
 void MenuFunc::clearVehicle() {
+    if (VehicleService::getInstance().getVehicleCount() == 0) {
+        cout << endl;
+        cout << "都没有车你清空个蛋啊！" << endl;
+        cout << endl;
+        return;
+    }
+
     cout << endl;
     cout << "   ================================================ " << endl;
     cout << "||" << endl;

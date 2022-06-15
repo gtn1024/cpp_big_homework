@@ -20,12 +20,7 @@ int Utils::getSystem() {
 }
 
 std::string Utils::getUserHome() {
-    std::string res;
-    if (getSystem()) {
-        res = std::getenv("HOME");
-    } else {
-        res = std::getenv("USERPROFILE");
-    }
+    std::string res = std::getenv(getSystem() ? "HOME" : "USERPROFILE");
     return res;
 }
 
@@ -33,7 +28,7 @@ std::string Utils::getFilePath() {
     return getUserHome() + (getSystem() ? '/' : '\\') + "gtn1024_vehicle_manager.dat";
 }
 
-void Utils::exitProg() {
+void Utils::exitProgram() {
     if (FileService::saveToFile()) {
         std::cout << "保存成功！" << std::endl;
         std::cout << "文件名：" << getFilePath() << std::endl;

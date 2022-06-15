@@ -15,7 +15,12 @@ void runUnitTest();
 int main() {
 //    runUnitTest();
 
-    FileService::loadFromFile();
+    if (!FileService::loadFromFile()) {
+        cout << "当前未设置车主信息！" << endl;
+        MenuFunc::modifyPerson();
+        cout << "设置成功！" << endl;
+    }
+
     while (true) {
         MenuFunc::showMenu();
     }
